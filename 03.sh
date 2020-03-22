@@ -8,4 +8,4 @@ locale-gen
 echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
 echo 'LC_ALL=en_US.UTF-8' >> /etc/locale.conf 
 echo 'KEYMAP=us' >> /etc/vconsole.conf
-echo 'acr2' >> /etc/hostname
+echo 'acr3' >> /etc/hostname
