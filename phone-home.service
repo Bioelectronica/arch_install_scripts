@@ -1,0 +1,15 @@
+[Unit]
+Description=Phone Home Reverse SSH Service
+ConditionPathExists=|/usr/bin
+After=network.target
+
+[Service]
+User=bioeuser1
+ExecStart=/usr/bin/ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -i /home/bioeuser1/.ssh/id_rsa -R 22000:localhost:22 bioeuser1@104.210.57.240
+
+# Restart every >2 seconds to avoid StartLimitInterval failure
+RestartSec=60
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
