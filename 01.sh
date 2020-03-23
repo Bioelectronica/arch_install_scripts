@@ -16,3 +16,5 @@ mkdir /mnt/boot
 mount $1p1 /mnt/boot
 pacstrap /mnt base linux linux-firmware intel-ucode efibootmgr networkmanager openssh nano
 genfstab -U /mnt >> /mnt/etc/fstab
+cd
+cp -r arch_install_scripts /mnt/root
