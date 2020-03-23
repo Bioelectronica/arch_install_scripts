@@ -30,11 +30,11 @@ printf "Welcome1mooredna\nWelcome1mooredna\n" | passwd saveguest
 useradd -m -s /bin/bash bioeuser1
 printf "Welcome1mooredna\nWelcome1mooredna\n" | passwd bioeuser1
 cp phone-home.service /etc/systemd/system
-systemctl daemon-reload
-systemctl enable phone-home
-BLANK=""
-su - bioeuser1 -s /bin/bash -c "cat /dev/zero | ssh-keygen -q -N $BLANK"
-YES="yes\n"
-su - bioeuser1 -s /bin/bash -c "printf $YES | ssh 104.210.57.240"
-pacman -S sshpass
-su - bioeuser1 -s /bin/bash -c "sshpass -p Welcome1mooredna ssh-copy-id 104.210.57.240"
+#systemctl daemon-reload
+#systemctl enable phone-home
+#BLANK=""
+#su - bioeuser1 -s /bin/bash -c "cat /dev/zero | ssh-keygen -q -N $BLANK"
+#YES="yes\n"
+#su - bioeuser1 -s /bin/bash -c "printf $YES | ssh 104.210.57.240"
+#pacman -S sshpass
+#su - bioeuser1 -s /bin/bash -c "sshpass -p Welcome1mooredna ssh-copy-id 104.210.57.240"
