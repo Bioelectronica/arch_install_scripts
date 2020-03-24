@@ -30,11 +30,19 @@ printf "Welcome1mooredna\nWelcome1mooredna\n" | passwd saveguest
 useradd -m -s /bin/bash bioeuser1
 printf "Welcome1mooredna\nWelcome1mooredna\n" | passwd bioeuser1
 cp phone-home.service /etc/systemd/system
-#systemctl daemon-reload
-#systemctl enable phone-home
-#BLANK=""
-#su - bioeuser1 -s /bin/bash -c "cat /dev/zero | ssh-keygen -q -N $BLANK"
-#YES="yes\n"
-#su - bioeuser1 -s /bin/bash -c "printf $YES | ssh 104.210.57.240"
-#pacman -S sshpass
-#su - bioeuser1 -s /bin/bash -c "sshpass -p Welcome1mooredna ssh-copy-id 104.210.57.240"
+# manual steps after are as follows
+# set the hostname
+# reboot
+# login as root
+# EDITOR=nano visudo
+# reflector --sort rate --country us > /etc/pacman.d/mirrorlist
+# pacman -Sy
+# look at this file to file to get the ssh instructions
+# su bioeuser1
+# ssh-keygen
+# ssh-copy-id 104.210.57.240
+# exit
+# edit /etc/systemd/system/phone-home.service for port number
+# systemctl daemon-reload
+# systemctl enable phone-home
+# reboot and then make sure phone home works by using be2 to reverse tunnel in

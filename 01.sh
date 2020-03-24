@@ -14,7 +14,9 @@ pacman -Sy
 mount $1p2 /mnt
 mkdir /mnt/boot
 mount $1p1 /mnt/boot
-pacstrap /mnt base linux linux-firmware intel-ucode efibootmgr networkmanager openssh nano
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh nano man-db man-pages git sudo reflector
+# note that reflector includes python
 genfstab -U /mnt >> /mnt/etc/fstab
 cd
 cp -r arch_install_scripts /mnt/root
+# manual step after is arch-chroot /mnt then goto install directory and sh 02.sh /dev/mmcblk0
