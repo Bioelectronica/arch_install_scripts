@@ -19,3 +19,4 @@ echo "nm-applet &" >> /etc/xdg/openbox/autostart
 CMD="exec openbox-session"
 su saveguest -c "echo \"$CMD\" > ~/.xinitrc"
 cat bash_profile_addendum.sh >> /home/saveguest/.bash_profile
+su saveguest -c "mkdir ~/git-repos"
