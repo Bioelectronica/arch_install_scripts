@@ -49,7 +49,7 @@
     </action>
   </item>
 
-  <item label="Pavucontrol (Sound Mixer)">
+  <item label="Pavucontrol (Mixer)">
     <action name="Execute">
       <command>pavucontrol</command>
       <startupnotify>
