@@ -11,6 +11,7 @@ pacman -U arduino-1:1.8.9-1-x86_64.pkg.tar.xz --noconfirm
 pacman -S ttf-ubuntu-font-family ttf-croscore ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji --noconfirm
 #yay -S ttf-ms-fonts
 #yay -S ttf-mac-fonts
+cp hosts /etc/hosts
 cp tint2rc /etc/xdg/tint2/
 cp menu.xml /etc/xdg/openbox/
 cp rc.xml /etc/xdg/openbox/
