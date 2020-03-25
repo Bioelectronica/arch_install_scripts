@@ -21,7 +21,7 @@ su saveguest -c "echo \"$CMD\" > ~/.xinitrc"
 cat bash_profile_addendum.sh >> /home/saveguest/.bash_profile
 su saveguest -c "mkdir ~/git-repos"
 su saveguest -c "cd ~/git-repos;git clone https://aur.archlinux.org/yay-bin"
-su saveguest -c "cd ~/git-repos/yay-bin;makepkg -si"
+su saveguest -c "cd ~/git-repos/yay-bin;makepkg -si --noconfirm"
 su saveguest -c "yay -S google-chrome --noconfirm"
 su saveguest -c "yay -S zoom --noconfirm"
 su saveguest -c "yay -S icdiff --noconfirm"
