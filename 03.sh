@@ -1,6 +1,6 @@
 pacman -S xorg-server xorg-apps xorg-xinit openbox tint2 pavucontrol pulseaudio xfce4-terminal --noconfirm
 pacman -S tk wget vim vi htop nload ncdu tmux iotop tigervnc network-manager-applet guvcview --noconfirm
-pacman -S pcmanfm ristretto viewnior mupdf gedit light arandr --noconfirm
+pacman -S epiphany pcmanfm ristretto viewnior mupdf gedit light arandr --noconfirm
 chmod u+s /usr/bin/light
 pacman -S qt5-base hdf5 python-h5py ipython opencv --noconfirm
 pacman -S python-pandas python-pytables python-matplotlib --noconfirm
@@ -20,3 +20,11 @@ CMD="exec openbox-session"
 su saveguest -c "echo \"$CMD\" > ~/.xinitrc"
 cat bash_profile_addendum.sh >> /home/saveguest/.bash_profile
 su saveguest -c "mkdir ~/git-repos"
+su saveguest -c "cd ~/git-repos;git clone https://aur.archlinux.org/yay-bin"
+su saveguest -c "cd ~/git-repos/yay-bin;makepkg -si"
+su saveguest -c "yay -S google-chrome --noconfirm"
+su saveguest -c "yay -S zoom --noconfirm"
+su saveguest -c "yay -S icdiff --noconfirm"
+su saveguest -c "yay -S create_ap-git --noconfirm"
+su saveguest -c "yay -S rstudio-desktop-bin --noconfirm"
+su saveguest -c "yay -S etcher-bin --noconfirm"
