@@ -34,7 +34,7 @@ cp phone-home.service /etc/systemd/system
 # set the hostname
 # reboot
 # login as root
-# EDITOR=nano visudo
+# EDITOR=nano visudo pick the NOPASSWD option
 # reflector --sort rate --country us > /etc/pacman.d/mirrorlist
 # pacman -Sy
 # look at this file to file to get the ssh instructions

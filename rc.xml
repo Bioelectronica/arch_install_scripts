@@ -300,9 +300,9 @@
 
   <!-- Keybindings for running applications -->
 
-  <keybind key="F6">
+  <keybind key="F1">
     <action name="Execute">
-      <command>light -A 5</command>
+      <command>systemctl suspend</command>
     </action>
   </keybind>
 
@@ -312,15 +312,27 @@
     </action>
   </keybind>
 
+  <keybind key="F6">
+    <action name="Execute">
+      <command>light -A 5</command>
+    </action>
+  </keybind>
+
+  <keybind key="F7">
+    <action name="Execute">
+      <command>xfce4-terminal</command>
+    </action>
+  </keybind>
+
   <keybind key="F8">
     <action name="Execute">
       <command>arandr</command>
     </action>
   </keybind>
 
-  <keybind key="F12">
+  <keybind key="F10">
     <action name="Execute">
-      <command>pactl -- set-sink-volume 0 +5%</command>
+      <command>pactl -- set-sink-volume 0 0%</command>
     </action>
   </keybind>
 
@@ -330,9 +342,9 @@
     </action>
   </keybind>
 
-  <keybind key="F10">
+  <keybind key="F12">
     <action name="Execute">
-      <command>pactl -- set-sink-volume 0 0%</command>
+      <command>pactl -- set-sink-volume 0 +5%</command>
     </action>
   </keybind>
 
