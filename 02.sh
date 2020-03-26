@@ -16,7 +16,6 @@ systemctl enable sshd
 systemctl enable NetworkManager
 printf "Welcome1mooredna\nWelcome1mooredna\n" | passwd
 localectl set-keymap us
-timedatectl set-ntp True
 ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime 
 hwclock --systohc
 rm /etc/locale.gen
