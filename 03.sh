@@ -1,6 +1,6 @@
 pacman -S xorg-server xorg-apps xorg-xinit openbox tint2 pavucontrol pulseaudio xfce4-terminal --noconfirm
 pacman -S tk wget vim vi htop nload ncdu tmux iotop tigervnc network-manager-applet guvcview --noconfirm
-pacman -S epiphany pcmanfm ristretto viewnior mupdf gedit light arandr arch-install-scripts --noconfirm
+pacman -S epiphany pcmanfm ristretto viewnior mupdf gedit light arandr arch-install-scripts dosfstools --noconfirm
 chmod u+s /usr/bin/light
 pacman -S qt5-base hdf5 python-h5py ipython opencv --noconfirm
 pacman -S python-pandas python-pytables python-matplotlib --noconfirm
