@@ -1,6 +1,6 @@
-S1="$1"
-S2="p2"
-TARGET="$S1$S2"
+#S1="$1"
+#S2="p2"
+#TARGET="$S1$S2"
 bootctl --path=/boot install 
 cat - > /boot/loader/loader.conf << EOF
 default arch
@@ -10,7 +10,7 @@ title Bioelectronica
 linux /vmlinuz-linux
 initrd /intel-ucode.img
 initrd /initramfs-linux.img
-options root=$TARGET rw quiet
+options root=$1 rw quiet
 EOF
 systemctl enable sshd
 systemctl enable NetworkManager
