@@ -6,9 +6,8 @@ pacman -S qt5-base hdf5 python-h5py ipython opencv --noconfirm
 pacman -S python-pandas python-pytables python-matplotlib --noconfirm
 pacman -S python-seaborn python-scikit-learn jupyter-notebook --noconfirm
 pacman -S python-pyserial arduino-docs arduino-avr-core --noconfirm
-wget http://archive.virtapi.org/packages/a/arduino/arduino-1%3A1.8.9-1-x86_64.pkg.tar.xz
 pacman -U arduino-1:1.8.9-1-x86_64.pkg.tar.xz --noconfirm
-pacman -S ttf-ubuntu-font-family ttf-croscore ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji --noconfirm
+pacman -S ttf-ubuntu-font-family ttf-croscore ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu --noconfirm
 cp hosts /etc/hosts
 cp tint2rc /etc/xdg/tint2/
 cp menu.xml /etc/xdg/openbox/
@@ -29,4 +28,5 @@ su saveguest -c "yay -S rstudio-desktop-bin --noconfirm"
 su saveguest -c "yay -S etcher-bin --noconfirm"
 su saveguest -c "yay -S ttf-ms-fonts --noconfirm"
 su saveguest -c "yay -S ttf-mac-fonts --noconfirm"
+su saveguest -c "yay -S ttf-google-fonts-git"
 timedatectl set-ntp 1
