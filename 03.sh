@@ -1,13 +1,13 @@
 pacman -S xorg-server xorg-apps xorg-xinit openbox tint2 pavucontrol pulseaudio xfce4-terminal --noconfirm
 pacman -S tk wget vim vi htop nload ncdu tmux iotop tigervnc network-manager-applet guvcview --noconfirm
-pacman -S epiphany pcmanfm ristretto viewnior mupdf gedit light arandr arch-install-scripts dosfstools parted --noconfirm
+pacman -S epiphany pcmanfm ristretto viewnior mupdf gedit light arandr arch-install-scripts dosfstools parted sysstat --noconfirm
 chmod u+s /usr/bin/light
 pacman -S qt5-base hdf5 python-h5py ipython opencv --noconfirm
 pacman -S python-pandas python-pytables python-matplotlib --noconfirm
 pacman -S python-seaborn python-scikit-learn jupyter-notebook --noconfirm
 pacman -S python-pyserial arduino-docs arduino-avr-core --noconfirm
 pacman -U arduino-1:1.8.9-1-x86_64.pkg.tar.xz --noconfirm
-pacman -S ttf-ubuntu-font-family ttf-croscore ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu --noconfirm
+pacman -S ttf-liberation ttf-dejavu --noconfirm
 cp hosts /etc/hosts
 cp tint2rc /etc/xdg/tint2/
 cp menu.xml /etc/xdg/openbox/
@@ -24,9 +24,7 @@ su saveguest -c "yay -S google-chrome --noconfirm"
 su saveguest -c "yay -S zoom --noconfirm"
 su saveguest -c "yay -S icdiff --noconfirm"
 su saveguest -c "yay -S create_ap-git --noconfirm"
-su saveguest -c "yay -S rstudio-desktop-bin --noconfirm"
 su saveguest -c "yay -S etcher-bin --noconfirm"
 su saveguest -c "yay -S ttf-ms-fonts --noconfirm"
 su saveguest -c "yay -S ttf-mac-fonts --noconfirm"
-su saveguest -c "yay -S ttf-google-fonts-git"
 timedatectl set-ntp 1
