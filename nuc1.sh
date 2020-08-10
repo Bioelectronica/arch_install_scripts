@@ -89,22 +89,14 @@ mkdir /mnt/home/saveguest/git-repos
 mount /dev/mapper/gtr /mnt/home/saveguest/git-repos
 arch-chroot /mnt chown saveguest /home/saveguest/git-repos
 arch-chroot /mnt chgrp saveguest /home/saveguest/git-repos
-#arch-chroot /mnt su saveguest -c echo exec openbox-session >> /home/saveguest/.xinitrc
-#arch-chroot /mnt su saveguest -c cat bash_profile_addendum.sh >> /mnt/home/saveguest/.bash_profile
 arch-chroot /mnt pacman -S pcmanfm gpicview mupdf pavucontrol pulseaudio tigervnc chromium guvcview
-arch-chroot /mnt su saveguest -c "cd ~/git-repos;git clone https://aur.archlinux.org/yay-bin"
-arch-chroot /mnt su saveguest -c "cd ~/git-repos/yay-bin;makepkg -si --noconfirm"
-arch-chroot /mnt su saveguest -c "yay -S icdiff --noconfirm"
-arch-chroot /mnt su saveguest -c "yay -S create_ap-git --noconfirm"
-arch-chroot /mnt su saveguest -c "yay -S ttf-ms-fonts --noconfirm"
-arch-chroot /mnt su saveguest -c "yay -S ttf-mac-fonts --noconfirm"
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser1
 #------------------------------------------------------------- data science
 arch-chroot /mnt pacman -S qt5-base hdf5 python-h5py ipython opencv --noconfirm
 arch-chroot /mnt pacman -S python-pandas python-pytables python-matplotlib --noconfirm
 arch-chroot /mnt pacman -S python-seaborn python-scikit-learn jupyter-notebook --noconfirm
 arch-chroot /mnt pacman -S python-pyserial arduino-docs arduino-avr-core arduino --noconfirm
-# manual steps after are as follows
+# manual steps after are as follows:
 # set the hostname
 # reboot
 # login as root
@@ -114,8 +106,14 @@ arch-chroot /mnt pacman -S python-pyserial arduino-docs arduino-avr-core arduino
 # su bioeuser1
 # ssh-keygen
 # ssh-copy-id 104.210.57.240
-# exit
 # edit /etc/systemd/system/phone-home.service for port number
 # systemctl daemon-reload
 # systemctl enable phone-home
+# login as saveguest:
+# cd ~/git-repos;git clone https://aur.archlinux.org/yay-bin
+# cd ~/git-repos/yay-bin;makepkg -si --noconfirm
+# yay -S icdiff --noconfirm
+# yay -S create_ap-git --noconfirm
+# yay -S ttf-ms-fonts --noconfirm
+# yay -S ttf-mac-fonts --noconfirm
 # reboot and then make sure phone home works by using be2 to reverse tunnel in
