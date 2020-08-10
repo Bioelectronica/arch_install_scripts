@@ -1,6 +1,7 @@
 #!/bin/sh
 T="/dev/nvme0n1"
 P="p"
+N="31"
 A=$T"$P"1
 B=$T"$P"2
 C=$T"$P"3
@@ -21,7 +22,7 @@ sleep 0.1
 mkfs.ext4 $B
 sleep 0.1
 cryptsetup luksFormat $C
-cryptsetup luksAddKey $C $X
+cryptsetup luksAddKey $C $X -d $N
 cryptsetup luksOpen $C gtr
 mkfs.ext4 /dev/mapper/gtr
 sleep 0.1
@@ -39,7 +40,7 @@ mount $A /mnt/boot
 pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh nano man-db man-pages git sudo reflector xorg xorg-xinit xterm openbox ttf-dejavu ttf-liberation tint2 network-manager-applet
 # note that reflector includes python
 genfstab -U /mnt >> /mnt/etc/fstab
-echo "gtr $C $X luks" >> /mnt/etc/crypttab
+echo "gtr $C $X luks keyfile-size=$N" >> /mnt/etc/crypttab
 chmod 400 /mnt/etc/crypttab
 echo "/dev/mapper/gtr /home/saveguest/git-repos ext4 rw,sync,nofail 0 0" >> /mnt/etc/fstab
 cp mirrorlist /mnt/etc/pacman.d/mirrorlist

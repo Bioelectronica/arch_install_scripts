@@ -13,18 +13,9 @@
     </action>
   </item>
 
-  <item label="Epiphany">
+  <item label="Chromium">
     <action name="Execute">
-      <command>epiphany</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-
-  <item label="GEdit">
-    <action name="Execute">
-      <command>gedit</command>
+      <command>chromium</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -34,24 +25,6 @@
   <item label="Guvcview">
     <action name="Execute">
       <command>guvcview</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-
-  <item label="Idle (Python)">
-    <action name="Execute">
-      <command>idle</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-
-  <item label="Pavucontrol (Mixer)">
-    <action name="Execute">
-      <command>pavucontrol</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -76,18 +49,9 @@
     </action>
   </item>
 
-  <item label="Xfce Terminal">
+  <item label="Terminal">
     <action name="Execute">
-      <command>xfce4-terminal</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-
-  <item label="Zoom">
-    <action name="Execute">
-      <command>zoom</command>
+      <command>st</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
