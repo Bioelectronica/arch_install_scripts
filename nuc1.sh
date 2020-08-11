@@ -1,4 +1,5 @@
 #!/bin/sh
+#------------------------------------------------------------- partition and format
 T="/dev/nvme0n1"
 P="p"
 A=$T"$P"1
@@ -28,7 +29,7 @@ sleep 0.1
 mkswap $D
 sleep 0.1
 mkfs.ext4 $E
-#------------------------------------------------------------- make chroot
+#------------------------------------------------------------- mounts and make chroot
 pacman -Sy reflector --noconfirm
 reflector --sort rate --country us > mirrorlist
 cp mirrorlist /etc/pacman.d/mirrorlist
@@ -36,13 +37,17 @@ pacman -Sy
 mount $B /mnt
 mkdir /mnt/boot
 mount $A /mnt/boot
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh nano man-db man-pages git sudo reflector xorg xorg-xinit xterm openbox ttf-dejavu ttf-liberation tint2 network-manager-applet
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh nano man-db man-pages git sudo reflector wget vim vi htop nload ncdu tmux iotop dosfstools parted --noconfirm
 # note that reflector includes python
 genfstab -U /mnt >> /mnt/etc/fstab
+cp mirrorlist /mnt/etc/pacman.d/mirrorlist
 echo "gtr $C $X luks" >> /mnt/etc/crypttab
 chmod 400 /mnt/etc/crypttab
 echo "/dev/mapper/gtr /home/saveguest/git-repos ext4 rw,sync,nofail 0 0" >> /mnt/etc/fstab
-cp mirrorlist /mnt/etc/pacman.d/mirrorlist
+mkdir /mnt/data
+mount $E /mnt/data
+chmod 777 /mnt/data
+echo "$E /data ext4 rw,sync,nofail 0 0" >> /mnt/etc/fstab
 #------------------------------------------------------------- boot configuration
 arch-chroot /mnt bootctl --path=/boot install 
 cat - > /mnt/boot/loader/loader.conf << EOF
@@ -70,35 +75,17 @@ arch-chroot /mnt timedatectl set-ntp 1
 arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable NetworkManager
 passwd --root /mnt root
-mkdir /mnt/data
-mount $E /mnt/data
-chmod 777 /mnt/data
-echo "$E /data ext4 rw,sync,nofail 0 0" >> /mnt/etc/fstab
 cp phone-home.service /mnt/etc/systemd/system/
 cp hosts /mnt/etc/hosts
-cp rc.xml /mnt/etc/xdg/openbox/
-cp menu.xml /mnt/etc/xdg/openbox/
-cp tint2rc /mnt/etc/xdg/tint2/
-echo "tint2 &" >> /mnt/etc/xdg/openbox/autostart
-echo "nm-applet &" >> /mnt/etc/xdg/openbox/autostart
-arch-chroot /mnt pacman -S tk wget vim vi htop nload ncdu tmux iotop dosfstools parted --noconfirm
-arch-chroot /mnt pacman -S pcmanfm gpicview mupdf pavucontrol pulseaudio tigervnc chromium guvcview --noconfirm
+cp -r /root/arch_install_scripts /mnt/root/
+chmod -R 777 /mnt/root/arch_install_scripts
 #------------------------------------------------------------- add users
 arch-chroot /mnt useradd -mG wheel,users,audio,lp,optical,storage,video,power,uucp,lock -s /bin/bash saveguest
 mkdir /mnt/home/saveguest/git-repos
 mount /dev/mapper/gtr /mnt/home/saveguest/git-repos
 arch-chroot /mnt chown saveguest /home/saveguest/git-repos
 arch-chroot /mnt chgrp saveguest /home/saveguest/git-repos
-cp bash_profile_addendum.sh /mnt/home/saveguest/
-cp runme.sh /mnt/home/saveguest/
-chmod 777 /mnt/home/saveguest/bash_profile_addendum.sh
-chmod 777 /mnt/home/saveguest/runme.sh
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser1
-#------------------------------------------------------------- data science
-arch-chroot /mnt pacman -S qt5-base hdf5 python-h5py ipython opencv --noconfirm
-arch-chroot /mnt pacman -S python-pandas python-pytables python-matplotlib --noconfirm
-arch-chroot /mnt pacman -S python-seaborn python-scikit-learn jupyter-notebook --noconfirm
-arch-chroot /mnt pacman -S python-pyserial arduino-docs arduino-avr-core arduino --noconfirm
 # manual steps after are as follows:
 # set the hostname
 # reboot
