@@ -29,7 +29,7 @@ mkswap $D
 sleep 0.1
 mkfs.ext4 $E
 #------------------------------------------------------------- make chroot
-pacman -Sy reflector
+pacman -Sy reflector --noconfirm
 reflector --sort rate --country us > mirrorlist
 cp mirrorlist /etc/pacman.d/mirrorlist
 pacman -Sy
