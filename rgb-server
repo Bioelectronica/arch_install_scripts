@@ -1,0 +1,8 @@
+#!/bin/bash
+# Start the web server
+python -m http.server 34133 -d /data &
+# Start jupyter notebook, and the Xvfb virtual x windows server required by jupyter
+# The environment variable enables scripts brought into ~/git-repos
+export PYTHONPATH=/home/saveguest/git-repos
+Xvfb &
+jupyter-notebook --allow-root --port 9843 --config /home/saveguest/.jupyter/jupyter_notebook_config.py > /home/saveguest/.jupyter/jupyter.log &

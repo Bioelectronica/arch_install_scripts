@@ -1,0 +1,11 @@
+[Unit]
+Description=RGBServer
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/sbin/rgb-server
+Type=forking
+
+[Install]
+WantedBy=multi-user.target

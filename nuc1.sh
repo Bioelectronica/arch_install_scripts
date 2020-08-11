@@ -75,17 +75,21 @@ arch-chroot /mnt timedatectl set-ntp 1
 arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable NetworkManager
 passwd --root /mnt root
-cp phone-home.service /mnt/etc/systemd/system/
+cp *.service /mnt/etc/systemd/system/
+cp rgb-server /mnt/usr/sbin/
+chmod 
 cp hosts /mnt/etc/hosts
 cp -r /root/arch_install_scripts /mnt/root/
-chmod -R 777 /mnt/root/arch_install_scripts
+chmod -R 777 /mnt/root/
 #------------------------------------------------------------- add users
 arch-chroot /mnt useradd -mG wheel,users,audio,lp,optical,storage,video,power,uucp,lock -s /bin/bash saveguest
 mkdir /mnt/home/saveguest/git-repos
 mount /dev/mapper/gtr /mnt/home/saveguest/git-repos
 arch-chroot /mnt chown saveguest /home/saveguest/git-repos
 arch-chroot /mnt chgrp saveguest /home/saveguest/git-repos
+arch-chroot /mnt useradd -m -s /bin/bash bioeuser0
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser1
+arch-chroot /mnt useradd -m -s /bin/bash bioeuser2
 # manual steps after are as follows:
 # set the hostname
 # reboot
