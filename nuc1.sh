@@ -76,8 +76,7 @@ arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable NetworkManager
 passwd --root /mnt root
 cp *.service /mnt/etc/systemd/system/
-cp rgb-server /mnt/usr/sbin/
-chmod 
+cp rgb-server /mnt/usr/sbin/ 
 cp hosts /mnt/etc/hosts
 cp -r /root/arch_install_scripts /mnt/root/
 chmod -R 777 /mnt/root/
