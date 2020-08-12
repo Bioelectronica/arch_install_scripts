@@ -90,6 +90,7 @@ arch-chroot /mnt chgrp saveguest /home/saveguest/git-repos
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser0
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser1
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser2
+arch-chroot /mnt useradd -mG wheel,users,audio,lp,optical,storage,video,power,uucp,lock -s /bin/bash upright
 # manual steps after are as follows:
 # set the hostname
 # reboot
