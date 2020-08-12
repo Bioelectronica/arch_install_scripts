@@ -14,7 +14,7 @@ echo "exec openbox-session" > ~/.xinitrc
 cat /root/arch_install_scripts/bash_profile_addendum.sh >> ~/.bash_profile
 sudo pacman -S xorg xorg-xinit openbox ttf-dejavu ttf-liberation tint2 network-manager-applet --noconfirm
 sudo pacman -S tk pcmanfm gpicview mupdf tigervnc chromium guvcview --noconfirm
-sudo pacman -S imagemagick imagemagick-doc ghostscript libheif libraw libwmf
+sudo pacman -S imagemagick imagemagick-doc ghostscript libheif libraw libwmf --noconfirm
 sudo cp /root/arch_install_scripts/rc.xml /etc/xdg/openbox/
 sudo cp /root/arch_install_scripts/menu.xml /etc/xdg/openbox/
 sudo cp /root/arch_install_scripts/autostart /etc/xdg/openbox/

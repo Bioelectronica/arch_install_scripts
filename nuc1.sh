@@ -37,7 +37,7 @@ pacman -Sy
 mount $B /mnt
 mkdir /mnt/boot
 mount $A /mnt/boot
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh nano man-db man-pages git sudo reflector wget vim vi htop nload ncdu tmux iotop dosfstools parted --noconfirm
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh nano man-db man-pages git sudo reflector wget vim vi htop nload ncdu tmux iotop dosfstools parted nmap --noconfirm
 # note that reflector includes python
 genfstab -U /mnt >> /mnt/etc/fstab
 cp mirrorlist /mnt/etc/pacman.d/mirrorlist
