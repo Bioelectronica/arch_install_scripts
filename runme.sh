@@ -27,3 +27,5 @@ sudo pacman -S qt5-base hdf5 python-h5py ipython opencv --noconfirm
 sudo pacman -S python-pandas python-pytables python-matplotlib --noconfirm
 sudo pacman -S python-seaborn python-scikit-learn jupyter-notebook --noconfirm
 sudo pacman -S python-pyserial arduino-docs arduino-avr-core arduino --noconfirm
+sudo pacman -S python-pip python-google-api-python-client python-oauth2client ffmpeg --noconfirm
+yay -S python-bokeh --noconfirm
