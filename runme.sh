@@ -6,7 +6,6 @@ git clone https://aur.archlinux.org/yay-bin
 cd yay-bin
 makepkg -si --noconfirm
 cd
-yay -S icdiff --noconfirm
 yay -S create_ap-git --noconfirm
 yay -S rc-local --noconfirm
 #------------------------------------------------------------- GUI
@@ -29,3 +28,6 @@ sudo pacman -S python-seaborn python-scikit-learn jupyter-notebook --noconfirm
 sudo pacman -S python-pyserial arduino-docs arduino-avr-core arduino --noconfirm
 sudo pacman -S python-pip python-google-api-python-client python-oauth2client ffmpeg --noconfirm
 yay -S python-bokeh --noconfirm
+#------------------------------------------------------------- problem stuff at end
+yay -S icdiff --noconfirm
+

@@ -74,7 +74,7 @@ echo 'KEYMAP=us' >> /mnt/etc/vconsole.conf
 arch-chroot /mnt timedatectl set-ntp 1
 arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable NetworkManager
-passwd --root /mnt root
+# passwd --root /mnt root
 cp *.service /mnt/etc/systemd/system/
 cp rgb-server /mnt/usr/sbin/ 
 cp hosts /mnt/etc/hosts
