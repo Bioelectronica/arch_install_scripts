@@ -21,9 +21,10 @@
 # 192.168.1.243	pand3	# down on aug22 pand3_un PANDgn relay
 192.168.1.43    pand6	# aug22 lonely freezer to right of eng biosafety
 192.168.1.85	rgb2	# aug22 rgb_un CMPTgn
+192.168.1.82	xeb	# aug22
 # WiFi addresses - only accesible through bioe wireless network
 192.168.1.237	he5-wifi	# wlp0s20f3 aug22	
 192.168.68.125	he7-wifi	# aug22
 192.168.68.139	he8-wifi	# aug22
 192.168.68.106	jof-wifi	# aug22
-192.168.68.133	rgb-wifi	# aug22
+192.168.68.133	rgb2-wifi	# aug22
