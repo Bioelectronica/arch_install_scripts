@@ -1,43 +1,29 @@
 # WAN addresses - accesible from public internet
-104.210.57.240	be2
-107.199.77.18	cap1-wan # verified feb20,2020 mar18
-128.92.140.45	rgb-wan  # verified feb20,2020 mar18
-69.181.109.48	sk-wan   # verified feb20,2020 mar18
-128.92.140.43	trd-wan  # verified feb20,2020 mar18
-128.92.140.44	utt-wan  # verified feb20,2020 mar18
+104.210.57.240	be2-wan	# down as of	aug22
+107.199.77.18	cap-wan	# verified	aug22
+69.181.109.48	sk-wan	# down as of	aug22
+128.92.140.44	utt-wan	# verified	aug22
+24.205.111.31	he9-wan	# installed	aug22
 # LAN addresses - DHCP server on UTT router
-192.168.1.1	utt	 # verified feb20,2020		mar18
-192.168.1.67	ash	 # ash_un ENGRgn feb20,2020	mar18
-192.168.1.109	blc	 # blc_un CMPTgn feb20,2020	mar18
-192.168.1.26	conf1	 # conf1_un GNRLgn feb20,2020	mar18
-192.168.1.216	he2	 # he2_un HEXAgn feb20,2020	mar18
-#192.168.1.185	he3	 he3_un HEXAgn feb20,2020	UNREACHABLEmar18
-192.168.1.6	he4	 # he4_un HEXAgn feb20,2020	mar18
-192.168.1.237	he5	 # WIFI wlp0s20f3		mar18 need to update he5_un HEXAgn	
-#		he6	 unknown status mar18
-192.168.1.58	he7	 # mar18
-192.168.1.198	he8	 # mar18
-#		he9	 Roger has in Saratoga mar18
-192.168.1.59    he10	 # mar18
-192.168.1.81	jof	 # mar18 jof_un GNRLgn feb20,2020
-192.168.1.241	pand1	 # mar18 pand1_un PANDgn feb20,2020 left side of engineering biosafety cabinet
-192.168.1.233	pand2	 # mar18 triple temperature reader
-192.168.1.243	pand3	 # mar18 pand3_un PANDgn feb20,2020 relay
-192.168.1.43    pand6	 # mar18 lonely freezer to right of eng biosafety
-192.168.1.85	rgb	 # mar18 rgb_un CMPTgn feb20,2020
-192.168.1.17	trd	 # mar18 trd_un CMPTgn feb20,2020
-192.168.1.61	wasnero	 # mar18
+192.168.1.1	utt	# verified aug22
+192.168.1.67	ash	# ash_un ENGRgn aug22
+192.168.1.26	conf1	# conf1_un GNRLgn aug22
+192.168.1.216	he2	# he2_un HEXAgn aug22
+192.168.1.6	he4	# he4_un HEXAgn aug22
+192.168.1.110	he5	# verified aug22
+192.168.1.58	he7	# verified aug22
+192.168.1.198	he8	# verified aug22
+192.168.1.238	he9	# installed aug22
+192.168.1.59    he10	# verified aug22
+192.168.1.81	jof	# installed aug22
+192.168.1.241	pand1	# aug22 left side of engineering biosafety cabinet
+192.168.1.233	pand2	# aug22 triple temperature reader
+# 192.168.1.243	pand3	# down on aug22 pand3_un PANDgn relay
+192.168.1.43    pand6	# aug22 lonely freezer to right of eng biosafety
+192.168.1.85	rgb2	# aug22 rgb_un CMPTgn
 # WiFi addresses - only accesible through bioe wireless network
-192.168.68.150	ash-wifi	# verified feb20,2020	mar18
-192.168.68.122	conf1-wifi	# mar18
-192.168.68.105	he2-wifi	# mar18
-#192.168.68.145	he3-wifi	verified feb20,2020 UNREACHABLEmar18
-192.168.1.213	he4-wifi	# mar18
-192.168.68.125	he7-wifi	# verified feb20,2020	mar18
-192.168.68.139	he8-wifi	# mar18
-192.168.68.113	ir7-wifi	# mar18
-192.168.68.121	jof-wifi	# mar18
-192.168.1.233	pand2-wifi	# mar18
-192.168.68.133	rgb-wifi	# mar18
-192.168.68.128	trd-wifi	# mar18
-192.168.1.225	wasnero-wifi	# mar19
+192.168.1.237	he5-wifi	# wlp0s20f3 aug22	
+192.168.68.125	he7-wifi	# aug22
+192.168.68.139	he8-wifi	# aug22
+192.168.68.106	jof-wifi	# aug22
+192.168.68.133	rgb-wifi	# aug22
