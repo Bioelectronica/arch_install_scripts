@@ -51,7 +51,7 @@
 
   <item label="Terminal">
     <action name="Execute">
-      <command>st</command>
+      <command>st -f "Liberation Mono:size=16"</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
