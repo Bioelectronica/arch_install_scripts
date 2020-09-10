@@ -1,6 +1,6 @@
 #!/bin/sh
 #------------------------------------------------------------- partition and format
-T="/dev/nvme0n1"
+T="/dev/mmcblk0"
 P="p"
 A=$T"$P"1
 B=$T"$P"2
@@ -18,9 +18,7 @@ mkfs.ext4 $C
 sleep 0.1
 mkswap $B
 #------------------------------------------------------------- mounts and make chroot
-pacman -Sy reflector --noconfirm
-reflector --sort rate --country us > mirrorlist
-cp mirrorlist /etc/pacman.d/mirrorlist
+cp /root/arch_install_scripts/mirrorlist /etc/pacman.d/mirrorlist
 pacman -Sy
 mount $C /mnt
 mkdir /mnt/boot
@@ -28,7 +26,7 @@ mount $A /mnt/boot
 pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh nano man-db man-pages git sudo reflector wget vim vi htop nload ncdu tmux iotop dosfstools parted nmap --noconfirm
 # note that reflector includes python
 genfstab -U /mnt >> /mnt/etc/fstab
-cp mirrorlist /mnt/etc/pacman.d/mirrorlist
+cp /root/arch_install_scripts/mirrorlist /mnt/etc/pacman.d/mirrorlist
 #------------------------------------------------------------- boot configuration
 arch-chroot /mnt bootctl --path=/boot install 
 cat - > /mnt/boot/loader/loader.conf << EOF
@@ -39,7 +37,7 @@ title Bioelectronica
 linux /vmlinuz-linux
 initrd /intel-ucode.img
 initrd /initramfs-linux.img
-options root=$C rw quiet
+options root=$C rw acpi=ht
 EOF
 #------------------------------------------------------------- localization settings
 arch-chroot /mnt localectl set-keymap us
@@ -52,25 +50,22 @@ echo 'LANG=en_US.UTF-8' >> /mnt/etc/locale.conf
 echo 'LC_ALL=en_US.UTF-8' >> /mnt/etc/locale.conf 
 echo 'KEYMAP=us' >> /mnt/etc/vconsole.conf
 #------------------------------------------------------------- misc for root
-arch-chroot /mnt timedatectl set-ntp 1
 arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable NetworkManager
 cp *.service /mnt/etc/systemd/system/
-cp hosts /mnt/etc/hosts
+cp /root/arch_install_scripts/hosts /mnt/etc/hosts
 cp -r /root/arch_install_scripts /mnt/root/
 chmod -R 777 /mnt/root/
 #------------------------------------------------------------- add users
 arch-chroot /mnt useradd -mG wheel,users,audio,lp,optical,storage,video,power,uucp,lock -s /bin/bash saveguest
 mkdir /mnt/home/saveguest/git-repos
-mount /dev/mapper/gtr /mnt/home/saveguest/git-repos
 arch-chroot /mnt chown saveguest /home/saveguest/git-repos
 arch-chroot /mnt chgrp saveguest /home/saveguest/git-repos
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser0
 # manual steps after are as follows:
+# arch-chroot /mnt
 # set the hostname
-# reboot
-# login as root
-# set password for saveguest and bioeuser0
+# set password for root, saveguest, bioeuser0
 # EDITOR=nano visudo pick the NOPASSWD option
 # look at this file to file to get the ssh instructions
 # su bioeuser1
@@ -80,4 +75,4 @@ arch-chroot /mnt useradd -m -s /bin/bash bioeuser0
 # systemctl daemon-reload
 # systemctl enable phone-home
 # reboot and then make sure phone home works by using be2 to reverse tunnel in
-# login as saveguest and execute runme
+# login as saveguest and execute runme.sh
