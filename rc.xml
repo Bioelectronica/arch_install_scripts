@@ -306,7 +306,7 @@
 
   <keybind key="F7">
     <action name="Execute">
-      <command>xfce4-terminal</command>
+      <command>st</command>
     </action>
   </keybind>
 
