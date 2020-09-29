@@ -286,12 +286,6 @@
 
   <!-- Keybindings for running applications -->
 
-  <keybind key="F1">
-    <action name="Execute">
-      <command>systemctl suspend</command>
-    </action>
-  </keybind>
-
   <keybind key="F5">
     <action name="Execute">
       <command>light -U 5</command>
@@ -313,6 +307,12 @@
   <keybind key="F8">
     <action name="Execute">
       <command>arandr</command>
+    </action>
+  </keybind>
+
+  <keybind key="F9">
+    <action name="Execute">
+      <command>systemctl suspend</command>
     </action>
   </keybind>
 
