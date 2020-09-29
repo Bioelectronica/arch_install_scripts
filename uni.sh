@@ -36,7 +36,8 @@ mkdir /mnt/home			# mount home
 mount /dev/mapper/gtr /mnt/home	# mount home
 pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh \
 nano vi vim man-db man-pages git sudo reflector usbutils htop nload ncdu iotop dosfstools parted \
-nmap wget --noconfirm		# reflector includes python
+nmap wget xorg-server xorg-xinit xterm openbox ttf-dejavu ttf-liberation tint2 network-manager-applet
+# reflector includes python
 genfstab -U /mnt >> /mnt/etc/fstab
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/
 echo "gtr $C $X luks" >> /mnt/etc/crypttab
@@ -67,6 +68,7 @@ echo 'KEYMAP=us' >> /mnt/etc/vconsole.conf
 #------------------------------------------------------------- misc for root
 arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable NetworkManager
+arch-chroot /mnt systemctl enable vncserver0
 cp /root/arch_install_scripts/*.service /mnt/etc/systemd/system/
 cp /root/arch_install_scripts/rgb-server /mnt/usr/sbin/ 
 cp /root/arch_install_scripts/hosts /mnt/etc/hosts
@@ -77,9 +79,12 @@ arch-chroot /mnt useradd -mG wheel,users,audio,lp,optical,storage,video,power,uu
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser0
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser1
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser2
+arch-chroot /mnt echo ":0=saveguest" >> /etc/tigervnc/vncserver.users
+arch-chroot /mnt rm /usr/share/xsessions/openbox-kde.desktop
 # manual steps in arch-chroot:
 # set the root password
 # set the saveguess, bioeuser0, bioeuser1, bioeuser2 passwords
+# su saveguest and vncpasswd
 # EDITOR=nano visudo pick the NOPASSWD option
 # exit the chroot and reboot into root account:
 # su bioeuser0
