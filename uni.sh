@@ -34,8 +34,8 @@ mkdir /mnt/boot			# mount boot
 mount $A /mnt/boot		# mount boot
 mkdir /mnt/home			# mount home
 mount /dev/mapper/gtr /mnt/home	# mount home
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh\
-nano vi vim man-db man-pages git sudo reflector usbutils htop nload ncdu iotop dosfstools parted\
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh \
+nano vi vim man-db man-pages git sudo reflector usbutils htop nload ncdu iotop dosfstools parted \
 nmap wget --noconfirm		# reflector includes python
 genfstab -U /mnt >> /mnt/etc/fstab
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/
