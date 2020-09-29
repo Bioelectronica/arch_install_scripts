@@ -34,5 +34,6 @@ yay -S arduino-cli
 arduino-cli core update-index
 arduino-cli core install arduino:avr
 sudo echo ":0=saveguest" >> /etc/tigervnc/vncserver.users
+sudo rm /usr/share/xsessions/openbox-kde.desktop
 #------------------------------------------------------------- problem stuff at end
 yay -S icdiff --noconfirm
