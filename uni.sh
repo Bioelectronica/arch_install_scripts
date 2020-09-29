@@ -36,7 +36,8 @@ mkdir /mnt/home			# mount home
 mount /dev/mapper/gtr /mnt/home	# mount home
 pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh \
 nano vi vim man-db man-pages git sudo reflector usbutils htop nload ncdu iotop dosfstools parted \
-nmap wget xorg-server xorg-xinit xterm openbox ttf-dejavu ttf-liberation tint2 network-manager-applet tigervnc
+nmap wget xorg-server xorg-xinit xterm openbox ttf-dejavu ttf-liberation tint2 network-manager-applet \
+tigervnc pyxdg
 # reflector includes python
 genfstab -U /mnt >> /mnt/etc/fstab
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/
