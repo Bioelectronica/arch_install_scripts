@@ -34,7 +34,7 @@ mkdir /mnt/boot			# mount boot
 mount $A /mnt/boot		# mount boot
 mkdir /mnt/home			# mount home
 mount /dev/mapper/gtr /mnt/home	# mount home
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr networkmanager openssh \
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode linux-headers efibootmgr networkmanager openssh \
 nano vi vim man-db man-pages git sudo reflector usbutils htop nload ncdu iotop dosfstools parted \
 nmap wget xorg-server xorg-xinit xterm openbox ttf-dejavu ttf-liberation tint2 network-manager-applet \
 tigervnc pyxdg
