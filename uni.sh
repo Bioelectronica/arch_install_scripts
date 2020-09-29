@@ -66,21 +66,21 @@ echo 'LANG=en_US.UTF-8' >> /mnt/etc/locale.conf
 echo 'LC_ALL=en_US.UTF-8' >> /mnt/etc/locale.conf 
 echo 'KEYMAP=us' >> /mnt/etc/vconsole.conf
 #------------------------------------------------------------- misc for root
-arch-chroot /mnt systemctl enable sshd
-arch-chroot /mnt systemctl enable NetworkManager
-arch-chroot /mnt systemctl enable vncserver0
 cp /root/arch_install_scripts/*.service /mnt/etc/systemd/system/
 cp /root/arch_install_scripts/rgb-server /mnt/usr/sbin/ 
 cp /root/arch_install_scripts/hosts /mnt/etc/hosts
 cp -r /root/arch_install_scripts /mnt/root/
 chmod -R 777 /mnt/root/
+arch-chroot /mnt systemctl enable sshd
+arch-chroot /mnt systemctl enable NetworkManager
+arch-chroot /mnt systemctl enable vncserver0
 #------------------------------------------------------------- add users
 arch-chroot /mnt useradd -mG wheel,users,audio,lp,optical,storage,video,power,uucp,lock -s /bin/bash saveguest
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser0
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser1
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser2
-arch-chroot /mnt echo ":0=saveguest" >> /etc/tigervnc/vncserver.users
-arch-chroot /mnt rm /usr/share/xsessions/openbox-kde.desktop
+echo ":0=saveguest" >> /mnt/etc/tigervnc/vncserver.users
+rm /mnt/usr/share/xsessions/openbox-kde.desktop
 # manual steps in arch-chroot:
 # set the root password
 # set the saveguess, bioeuser0, bioeuser1, bioeuser2 passwords
