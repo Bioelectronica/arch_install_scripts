@@ -37,7 +37,7 @@ mount /dev/mapper/gtr /mnt/home	# mount home
 pacstrap /mnt base base-devel linux linux-firmware intel-ucode linux-headers efibootmgr networkmanager openssh \
 nano mc vi vim man-db man-pages git sudo reflector usbutils htop nload ncdu iotop dosfstools parted \
 nmap wget xorg-server xorg-xinit xterm openbox ttf-dejavu ttf-liberation tint2 network-manager-applet \
-tigervnc pyxdg
+tigervnc pyxdg bluez-utils blueman
 # reflector includes python
 genfstab -U /mnt >> /mnt/etc/fstab
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/
@@ -76,6 +76,7 @@ chmod u+s /usr/bin/light
 arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable vncserver0
+arch-chroot /mnt systemctl enable bluetooth
 #------------------------------------------------------------- add users
 arch-chroot /mnt useradd -mG wheel,users,audio,lp,optical,storage,video,power,uucp,lock -s /bin/bash saveguest
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser0
@@ -91,7 +92,7 @@ rm /mnt/usr/share/xsessions/openbox-kde.desktop
 # exit the chroot and reboot into root account:
 # su bioeuser0
 # ssh-keygen
-# ssh-copy-id 104.210.57.240
+# ssh-copy-id he9-wan
 # edit /etc/systemd/system/phone-home.service for port number
 # systemctl daemon-reload
 # systemctl enable phone-home
