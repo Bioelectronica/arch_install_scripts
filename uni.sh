@@ -1,6 +1,6 @@
 #!/bin/sh
 #------------------------------------------------------------- partition and format
-T="/dev/mmcblk0"
+T="/dev/nvme0n1"
 P="p"
 A=$T"$P"1	# boot
 B=$T"$P"2	# swap
