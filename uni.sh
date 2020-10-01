@@ -1,6 +1,6 @@
 #!/bin/sh
 #------------------------------------------------------------- partition and format
-T="/dev/nvme0n1"
+T="/dev/mmcblk0"
 P="p"
 A=$T"$P"1	# boot
 B=$T"$P"2	# swap
@@ -72,6 +72,7 @@ cp /root/arch_install_scripts/rgb-server /mnt/usr/sbin/
 cp /root/arch_install_scripts/hosts /mnt/etc/hosts
 cp -r /root/arch_install_scripts /mnt/root/
 chmod -R 777 /mnt/root/
+chmod u+s /usr/bin/light
 arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable vncserver0

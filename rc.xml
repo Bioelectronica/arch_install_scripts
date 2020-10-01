@@ -286,51 +286,15 @@
 
   <!-- Keybindings for running applications -->
 
-  <keybind key="F5">
+  <keybind key="F11">
     <action name="Execute">
       <command>light -U 5</command>
     </action>
   </keybind>
 
-  <keybind key="F6">
-    <action name="Execute">
-      <command>light -A 5</command>
-    </action>
-  </keybind>
-
-  <keybind key="F7">
-    <action name="Execute">
-      <command>st</command>
-    </action>
-  </keybind>
-
-  <keybind key="F8">
-    <action name="Execute">
-      <command>arandr</command>
-    </action>
-  </keybind>
-
-  <keybind key="F9">
-    <action name="Execute">
-      <command>systemctl suspend</command>
-    </action>
-  </keybind>
-
-  <keybind key="F10">
-    <action name="Execute">
-      <command>pactl -- set-sink-volume 0 0%</command>
-    </action>
-  </keybind>
-
-  <keybind key="F11">
-    <action name="Execute">
-      <command>pactl -- set-sink-volume 0 -5%</command>
-    </action>
-  </keybind>
-
   <keybind key="F12">
     <action name="Execute">
-      <command>pactl -- set-sink-volume 0 +5%</command>
+      <command>light -A 5</command>
     </action>
   </keybind>
 
