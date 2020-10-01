@@ -70,9 +70,10 @@ echo 'KEYMAP=us' >> /mnt/etc/vconsole.conf
 cp /root/arch_install_scripts/*.service /mnt/etc/systemd/system/
 cp /root/arch_install_scripts/rgb-server /mnt/usr/sbin/ 
 cp /root/arch_install_scripts/hosts /mnt/etc/hosts
+cp /root/arch_install_scripts/unison /mnt/usr/bin/
 cp -r /root/arch_install_scripts /mnt/root/
-chmod -R 777 /mnt/root/
-chmod u+s /usr/bin/light
+chmod 777 /mnt/root/
+chmod u+s /mnt/usr/bin/light
 arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable vncserver0

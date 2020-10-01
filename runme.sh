@@ -1,6 +1,7 @@
 #!/bin/sh
 #------------------------------------------------------------- yay
 cd
+mkdir git-repos
 cd git-repos
 git clone https://aur.archlinux.org/yay-bin
 cd yay-bin
