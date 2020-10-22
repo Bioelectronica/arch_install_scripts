@@ -3,7 +3,7 @@
 T="/dev/mmcblk0"
 P="p"
 A=$T"$P"1	# boot
-D=$T"$P"4	# root
+D=$T"$P"2	# root
 parted -s $T mklabel gpt 
 parted -s $T mkpart primary fat32 1MiB 261MiB
 parted -s $T set 1 esp on
