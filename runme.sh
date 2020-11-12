@@ -12,7 +12,7 @@ yay -S rc-local --noconfirm
 #------------------------------------------------------------- GUI
 echo "exec openbox-session" > ~/.xinitrc
 cat /root/arch_install_scripts/bash_profile_addendum.sh >> ~/.bash_profile
-sudo pacman -S tk pcmanfm gpicview mupdf tigervnc chromium guvcview light arandr --noconfirm
+sudo pacman -S tk pcmanfm gpicview mupdf chromium guvcview light arandr --noconfirm
 sudo pacman -S imagemagick imagemagick-doc ghostscript libheif libraw libwmf --noconfirm
 sudo cp /root/arch_install_scripts/rc.xml /etc/xdg/openbox/
 sudo cp /root/arch_install_scripts/menu.xml /etc/xdg/openbox/
