@@ -49,9 +49,18 @@
     </action>
   </item>
 
-  <item label="Terminal">
+  <item label="st Terminal">
     <action name="Execute">
       <command>st -f "Liberation Mono:size=16"</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+
+  <item label="xfce Terminal">
+    <action name="Execute">
+      <command>xfce4-terminal</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>

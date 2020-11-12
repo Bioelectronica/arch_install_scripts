@@ -21,6 +21,7 @@ sudo cp /root/arch_install_scripts/tint2rc /etc/xdg/tint2/
 yay -S ttf-ms-fonts --noconfirm
 yay -S ttf-mac-fonts --noconfirm
 yay -S st --noconfirm
+sudo pacman -S xfce4-terminal --noconfirm
 #------------------------------------------------------------- data science
 sudo pacman -S qt5-base hdf5 python-h5py ipython opencv --noconfirm
 sudo pacman -S python-pandas python-pytables python-matplotlib --noconfirm

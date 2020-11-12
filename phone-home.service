@@ -5,7 +5,7 @@ After=network.target
 
 [Service]
 User=bioeuser0
-ExecStart=/usr/bin/ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -i /home/bioeuser0/.ssh/id_rsa -R 22000:localhost:22 bioeuser0@he9-wan
+ExecStart=/usr/bin/ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -i /home/bioeuser0/.ssh/id_rsa -R 22000:localhost:22 bioeuser0@cap-wan
 
 # Restart every >2 seconds to avoid StartLimitInterval failure
 RestartSec=60

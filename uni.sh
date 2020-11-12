@@ -83,7 +83,7 @@ arch-chroot /mnt useradd -mG wheel,users,audio,lp,optical,storage,video,power,uu
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser0
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser1
 arch-chroot /mnt useradd -m -s /bin/bash bioeuser2
-echo ":0=saveguest" >> /mnt/etc/tigervnc/vncserver.users
+echo ":9=saveguest" >> /mnt/etc/tigervnc/vncserver.users
 rm /mnt/usr/share/xsessions/openbox-kde.desktop
 # manual steps in arch-chroot:
 # set the root password
