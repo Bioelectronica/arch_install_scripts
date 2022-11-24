@@ -1,0 +1,5 @@
+echo -e "deb http://deb.debian.org/debian bullseye main contrib non-free\ndeb-src http://deb.debian.org/debian bullseye main contrib non-free\ndeb http://deb.debian.org/debian bullseye-updates main contrib non-free\ndeb-src http://deb.debian.org/debian bullseye-updates main contrib non-free\ndeb http://security.debian.org/debian-security/ bullseye-security main contrib non-free\ndeb-src http://security.debian.org/debian-security/ bullseye-security main contrib non-free\ndeb http://deb.debian.org/debian/ bullseye-backports main contrib non-free\ndeb-src http://deb.debian.org/debian bullseye-backports main contrib non-free" > /etc/apt/sources.list
+echo -e "Package: *\nPin: release a=debian-security\nPin-Priority: 1000\nPackage: *\nPin: release a=stable\nPin-Priority: 900\nPackage: *\nPin: release a=stable-updates\nPin-Priority: 800\nPackage: *\nPin: release a=stretch-backports\nPin-Priority: 700" > /etc/apt/preferences
+sudo apt-get update
+sudo apt-get install linux-image-6.0.0-0.deb11.2-amd64
+sudo reboot
