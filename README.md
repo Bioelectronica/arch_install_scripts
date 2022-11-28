@@ -132,7 +132,8 @@ Possible way 1: go to the **boot menu** ----> **Power** ----> **secondary power 
 - Step 5: run **vncInstaller.sh** by using **bash vncInstaller.sh**. (Make sure the password is that Welcome***** one and view-only password is wifi password)
 - Step 6: run **miniforgeInstaller.sh** by using **bash miniforgeInstaller.sh**. (Make usre you are in the conda environment. After installing, you can open another terminal to get into virtual environment.)
 - Step 6.1: (**Only when you need**) Export environment ----> run **environmentExport.sh** by using **bash environmentExport.sh**. (This script needs to run in the target environment.)
-- Step 6.2: (Using .yml rebuild environment.) Recreate environment ----> run **recreateEnvironment.sh** by using **bash recreateEnvironment.sh**. (Make sure the environment.yml is exist in the current folder.)
+- Step 6.2: (Using .yml rebuild environment.) Recreate environment ----> run **recreateEnvironment.sh** by using **bash recreateEnvironment.sh**. (Make sure the environment.yml is exist in the current folder
+- Step 7: Solve the suspend issue basing on **Sec. 8**
 
 ## 10. Appendix
 1) How to update the source list? https://wiki.debian.org/SourcesList 
