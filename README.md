@@ -122,7 +122,7 @@ Just keep using **sudo apt install package_name** basing on **package_list.txt**
 - Note: If you want to change back or change to other language, do **sudo dpkg-reconfigure locales** and change default language.
 
 ## 8. Suspend issue
-Possible way 1: go to the **boot menu** ----> **Power** ----> **secondary power setting** ----> unchoose **PCIe ASPM Support**.
+Possible way 1: go to the **boot menu** ----> **Power** ----> **secondary power setting** ----> unchoose **PCIe ASPM Support**. (Remeber save configuration before esc.)
 
 ## 9. Shell run
 - Step 1: run **expressvpnInstaller.sh** by using **bash expressvpnInstall.sh**. (Make sure expressvpn package is in the same folder as the script) Activate and connect to the vpn server by using **expressvpn activate** (once) and **expressvpn connect**.
