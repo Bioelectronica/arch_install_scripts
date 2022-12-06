@@ -10,7 +10,7 @@
 ## 3. Configure nucs
 - Step 1: Clone repos on specific branch (using **-b branch-name in git clone**) and commit head (using **git checkout commit-head**) from github. (repos: arduino, analytics, OpticalPodAnalyzer, ics, icserver and ashwini-playground) (Any changes should confirm with related persons)
 - Step 2: Modify .git/config file. Add token in the github link. (https://**token**@github....)
-- Step 3: Create sm.config first, and add content to this file basing on sm.config_example. Get into ics repos and execute 'setup.sh' and 'setup2.sh'.
+- Step 3: Create sm.config in home directory first, and add content to this file basing on sm_example.config. Get into ics repos and execute 'setup.sh' and 'setup2.sh'.
 - Step 4: Install arduino-cli using **sudo snap install arduino arduino-cli**. (If you cannot use arduino, try Valerio Bozzolan's answer in this link https://bugs.launchpad.net/ubuntu/+source/arduino/+bug/1916278)
 - Step 5: Set static ip address. (https://unix.stackexchange.com/questions/290938/assigning-static-ip-address-using-nmcli)
 _ Step 6: Add content to /etc/hosts. (Add ip address and device name to the file.)
