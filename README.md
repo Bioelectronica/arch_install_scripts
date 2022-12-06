@@ -8,7 +8,7 @@
 - Step 2: Run expressvpnInstaller.sh --> open expressvpn --> installPackage.sh --> miniforgeInstaller.sh --> recreateEnvironment.sh.
 
 ## 3. Configure nucs
-- Step 1: Clone repos on specific branch and commit head from github. (repos: arduino, analytics, OpticalPodAnalyzer, ics, icserver and ashwini-playground) (Any changes should confirm with related persons)
+- Step 1: Clone repos on specific branch (using **-b branch-name in git clone**) and commit head (using **git checkout commit-head**) from github. (repos: arduino, analytics, OpticalPodAnalyzer, ics, icserver and ashwini-playground) (Any changes should confirm with related persons)
 - Step 2: Modify .git/config file. Add token in the github link. (https://**token**@github....)
 - Step 3: Create sm.config first, and add content to this file basing on sm.config_example. Get into ics repos and execute 'setup.sh' and 'setup2.sh'.
 - Step 4: Install arduino-cli using **sudo snap install arduino arduino-cli**. (If you cannot use arduino, try Valerio Bozzolan's answer in this link https://bugs.launchpad.net/ubuntu/+source/arduino/+bug/1916278)
