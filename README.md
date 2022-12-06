@@ -1,3 +1,18 @@
+# Ubuntu installation tutorial
+## 1. Install Ubuntu
+- Step 1: Download Ubuntu .ios file and make a flash driver with it.
+- Step 2: Install by flash driver. Remeber: minimal installation --> install third-party software for wifi and desktop (doubted) --> username: saveguest; computer name: slave / master; passwd: Welco....
+
+## 2. Run bash scripts
+- Step 1: Download bash scripts from the server. (location: /home/liy/'shell\ scripts')
+- Step 2: Run expressvpnInstaller.sh --> open expressvpn --> installPackage.sh --> miniforgeInstaller.sh --> recreateEnvironment.sh.
+
+## 3. Configure nucs
+- Step 1: Clone repos on specific branch and commit head from github. (repos: arduino, analytics, OpticalPodAnalyzer, ics, icserver and ashwini-playground) (Any changes should confirm with related persons)
+- Step 2: Modify .git/config file. Add token in the github link. (https://**token**@github....)
+- Step 3: Create sm.config first, and add content to this file basing on sm.config_example. Get into ics repos and execute 'setup.sh' and 'setup2.sh'.
+- Step 4: Install arduino-cli using **sudo snap install arduino arduino-cli**. (If you cannot use arduino, try Valerio Bozzolan's answer in this link https://bugs.launchpad.net/ubuntu/+source/arduino/+bug/1916278)
+
 # DeBian installation tutorial
 ## 0. Above all
 Tip 1: When you don’t know or forget how to use a certain command, use ‘-h’ or ‘--help’ to see the instruction.
